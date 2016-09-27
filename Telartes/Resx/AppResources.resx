@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>2.0</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+
+	<!-- Textos de la app -->
+	<!-- Menu principal -->
+	<data name="News" xml:space="preserve">
+		<value>Noticias</value>
+		<comment> MainPage </comment>
+	</data>
+
+	<data name="CulturalAgenda" xml:space="preserve">
+		<value>Agenda Cultural</value>
+		<comment> MainPage </comment>
+	</data>
+
+	<data name="Calls" xml:space="preserve">
+		<value>Convocatorias</value>
+		<comment> MainPage </comment>
+	</data>
+
+	<!-- Mensajes de conexión -->
+	<data name="Connection_Msg_Title" xml:space="preserve">
+		<value>Estado de la conexión</value>
+		<comment> CallListPage </comment>
+	</data>
+
+	<data name="Connection_Msg_No_Connection" xml:space="preserve">
+		<value>Ninguna conexión encontrada</value>
+		<comment> CallListPage </comment>
+	</data>
+
+	<data name="Connection_Msg_Confirm_Connection" xml:space="preserve">
+		<value>Se esta por conectar a una red que consume datos. ¿Quiere continuar?</value>
+		<comment> CallListPage </comment>
+	</data>
+
+	<data name="Connection_Msg_No_Server_Connection" xml:space="preserve">
+		<value>No se ha podido conectar al servidor de Telartes. Se caragarán los datos memorizados anteriormente.</value>
+		<comment> CallListPage </comment>
+	</data>
+
+	<data name="Connection_Msg_OK" xml:space="preserve">
+		<value>OK</value>
+		<comment> CallListPage </comment>
+	</data>
+
+	<data name="Connection_Msg_YES" xml:space="preserve">
+		<value>Si</value>
+		<comment> CallListPage </comment>
+	</data>
+
+	<data name="Connection_Msg_NO" xml:space="preserve">
+		<value>NO</value>
+		<comment> CallListPage </comment>
+	</data>
+
+
+</root>

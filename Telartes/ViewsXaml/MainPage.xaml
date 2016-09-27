@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="Telartes.MainPage"
+		Padding = "0"
+		Title = "TELARTES">
+
+	
+	<ContentPage.ToolbarItems>
+
+		
+		<ToolbarItem Text="Información"
+				Order="Secondary"
+				Clicked="OnToolbarItemClicked">
+		</ToolbarItem>
+
+		<ToolbarItem Text="Noticias"
+				Order="Secondary"
+				Clicked="OnToolbarItemClicked">
+		</ToolbarItem>
+
+		<ToolbarItem Text="Agenda Cultural"
+				Order="Secondary"
+				Clicked="OnToolbarItemClicked">
+		</ToolbarItem>
+
+		<ToolbarItem Text="Convocatorias"
+				Order="Secondary"
+				Clicked="OnToolbarItemClicked">
+		</ToolbarItem>
+
+		<!--
+		<ToolbarItem Text="Ajustes"
+				Order="Secondary"
+				Clicked="OnToolbarItemClicked">
+		</ToolbarItem>
+		
+		<ToolbarItem Text="Notificaciones"
+				Order="Secondary"
+				Clicked="OnToolbarItemClicked">
+		</ToolbarItem>
+		-->
+		
+	</ContentPage.ToolbarItems>
+
+
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                    iOS="0, 0, 0, 0" />
+    </ContentPage.Padding>
+
+    <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="2*" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="2*" />
+        </Grid.ColumnDefinitions>
+
+
+        <BoxView Color="#712077" Grid.Row="0" Grid.ColumnSpan="2" />
+
+        <BoxView Color="#00a885" Grid.Row="1" Grid.ColumnSpan="2" />
+
+        <BoxView Color="#f1303e" Grid.Row="2" Grid.ColumnSpan="2" />
+		
+		
+        <Label Text="NOTICIAS"
+               Grid.Row="0" Grid.Column="1"
+               FontSize="Large"
+               HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"
+			   BackgroundColor="Transparent"
+			   TextColor="White" FontAttributes="Bold"/>
+
+        <Label Text="AGENDA CULTURAL"
+               Grid.Row="1" Grid.Column="1"
+               FontSize="Large"
+               HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"
+			   BackgroundColor="Transparent"
+			   TextColor="White" FontAttributes="Bold"/>
+
+		<Label Text="CONVOCATORIAS"
+               Grid.Row="2" Grid.Column="1"
+               FontSize="Large"
+               HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"
+			   BackgroundColor="Transparent"
+			   TextColor="White" FontAttributes="Bold"/>
+
+
+		<Image BackgroundColor="Transparent" WidthRequest="40" HorizontalOptions = "End"
+               Grid.Row="0" Grid.Column="0" >
+            <Image.Source>
+                <OnPlatform x:TypeArguments="ImageSource"
+                            Android="Noticias.png" />
+            </Image.Source>
+        </Image>
+
+		<Image BackgroundColor="Transparent" WidthRequest="40" HorizontalOptions = "End"
+               Grid.Row="1" Grid.Column="0" >
+            <Image.Source>
+                <OnPlatform x:TypeArguments="ImageSource"
+                            Android="AgendaCultural.png" />
+            </Image.Source>
+        </Image>
+
+		<Image BackgroundColor="Transparent" WidthRequest="40" HorizontalOptions = "End"
+               Grid.Row="2" Grid.Column="0" >
+            <Image.Source>
+                <OnPlatform x:TypeArguments="ImageSource"
+                            Android="Convocatoria.png" />
+            </Image.Source>
+        </Image>
+
+		<Button Grid.Row="0"  Grid.ColumnSpan="2" x:Name="btnNews" 
+				BackgroundColor="Transparent" TextColor="Transparent" />
+		
+		<Button Grid.Row="1"  Grid.ColumnSpan="2" x:Name="btnCulturalAgenda" 
+				BackgroundColor="Transparent" TextColor="Transparent"  />
+
+		<Button Grid.Row="2"  Grid.ColumnSpan="2" x:Name="btnCalls" 
+			BackgroundColor="Transparent" TextColor="Transparent" Clicked="OnCallButtonClicked" />
+
+    </Grid>
+</ContentPage>

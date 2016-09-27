@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="Telartes.CallItemPage"
+		xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+		Title="TELARTES" >
+
+	<ContentPage.ToolbarItems>
+		
+		<ToolbarItem Text="Información"
+				Order="Secondary"
+				Clicked="OnToolbarItemClicked">
+		</ToolbarItem>
+
+		<ToolbarItem Text="Noticias"
+				Order="Secondary"
+				Clicked="OnToolbarItemClicked">
+		</ToolbarItem>
+
+		<ToolbarItem Text="Agenda Cultural"
+				Order="Secondary"
+				Clicked="OnToolbarItemClicked">
+		</ToolbarItem>
+
+		<ToolbarItem Text="Convocatorias"
+				Order="Secondary"
+				Clicked="OnToolbarItemClicked">
+		</ToolbarItem>
+
+		<!--
+		<ToolbarItem Text="Ajustes"
+				Order="Secondary"
+				Clicked="OnToolbarItemClicked">
+		</ToolbarItem>
+		
+		<ToolbarItem Text="Notificaciones"
+				Order="Secondary"
+				Clicked="OnToolbarItemClicked">
+		</ToolbarItem>
+		-->
+		
+	</ContentPage.ToolbarItems>
+	
+	<ContentPage.Padding>
+		<OnPlatform x:TypeArguments="Thickness"
+				iOS="10, 20, 10, 0"
+				Android="3, 3"
+			WinPhone="10, 0" />
+	</ContentPage.Padding>
+
+
+	
+	<ContentPage.Content>
+		<ScrollView>
+			<StackLayout VerticalOptions="StartAndExpand" Spacing="10">
+				<Label Text="CONVOCATORIAS" BackgroundColor="#f1303e" TextColor="White" FontSize="Medium" 
+						HorizontalTextAlignment="Center"/>
+				
+				<Label Text="{Binding Node_Title}" FontSize= "Medium" FontAttributes="Bold" VerticalOptions="StartAndExpand" />
+
+				<StackLayout Orientation="Horizontal" Spacing="5">
+					<Label Text="Subido por " FontSize="Micro" VerticalOptions="StartAndExpand" />
+					<Label Text="{Binding enviado_por}" FontSize= "Micro" VerticalOptions="StartAndExpand" />
+					<Label Text=" el " FontSize ="Micro" VerticalOptions ="StartAndExpand" />
+					<Label Text="{Binding fecha_de_mensaje}" FontSize= "Micro" VerticalOptions="StartAndExpand" />
+				</StackLayout>
+
+
+				<ffimageloading:CachedImage
+						HorizontalOptions="Fill" VerticalOptions="Fill"
+						DownsampleToViewSize="true"
+						HeightRequest = "180"
+						Source = "{Binding Imagen}" >
+				</ffimageloading:CachedImage>
+
+				<StackLayout Orientation="Horizontal" Spacing="5">
+					<Label Text="Fecha límite: " FontSize ="Micro" VerticalOptions ="StartAndExpand" FontAttributes="Bold" />
+					<Label Text="{Binding Plazo}" FontSize= "Micro" VerticalOptions="StartAndExpand" />
+				</StackLayout>
+
+				<StackLayout Orientation="Horizontal" Spacing="5">
+					<Label Text="Convocante: " FontSize ="Micro" VerticalOptions ="StartAndExpand" FontAttributes="Bold" />
+					<Label Text="{Binding convocante}" FontSize= "Micro" VerticalOptions="StartAndExpand" />
+				</StackLayout>
+
+				<Label Text="{Binding Ciudad}" FontSize= "Micro" VerticalOptions="StartAndExpand" FontAttributes="Bold" />
+
+				<Label Text="{Binding Descripcion}" FontSize= "Micro" VerticalOptions="StartAndExpand" FontAttributes="Bold"  />
+						
+				<StackLayout Orientation="Horizontal" Spacing="5">
+					<!--<Label Text="Email: " FontSize ="Micro" VerticalOptions ="StartAndExpand" />-->
+					<Button Text="Enviar un mail" BackgroundColor="Transparent" HorizontalOptions="Center" 
+						Clicked="mailButtonClicked" IsVisible="{Binding Path=Mail_enable}"/>
+					
+					<Label x:Name="lbl_mail" Text="{Binding correo_electronico}" IsVisible="false" />
+				</StackLayout>
+
+				<StackLayout Orientation="Horizontal" Spacing="5">
+					<!--<Label Text="Dirección Web: " FontSize ="Micro" VerticalOptions ="StartAndExpand" VerticalTextAlignment="Center"/>-->
+					<Button Text="Ir a la dirección Web" BackgroundColor="Transparent" HorizontalOptions="Center" 
+							Clicked="webButtonClicked" IsVisible="{Binding Path=Web_enable}"/>
+					<Label x:Name="dir_web" Text="{Binding Direccion_web}" IsVisible="false"/>
+				</StackLayout>
+
+			</StackLayout>
+		</ScrollView>
+	</ContentPage.Content>
+
+</ContentPage>

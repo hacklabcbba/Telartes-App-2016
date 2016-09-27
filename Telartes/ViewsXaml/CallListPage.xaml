@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="Telartes.CallListPage"
+		xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+
+		Title="TELARTES">
+
+	<ContentPage.ToolbarItems>
+		
+		<ToolbarItem Text="Información"
+				Order="Secondary"
+				Clicked="OnToolbarItemClicked">
+		</ToolbarItem>
+
+		<ToolbarItem Text="Noticias"
+				Order="Secondary"
+				Clicked="OnToolbarItemClicked">
+		</ToolbarItem>
+
+		<ToolbarItem Text="Agenda Cultural"
+				Order="Secondary"
+				Clicked="OnToolbarItemClicked">
+		</ToolbarItem>
+
+		<ToolbarItem Text="Convocatorias"
+				Order="Secondary"
+				Clicked="OnToolbarItemClicked">
+		</ToolbarItem>
+
+		<!--
+		<ToolbarItem Text="Ajustes"
+				Order="Secondary"
+				Clicked="OnToolbarItemClicked">
+		</ToolbarItem>
+		
+		<ToolbarItem Text="Notificaciones"
+				Order="Secondary"
+				Clicked="OnToolbarItemClicked">
+		</ToolbarItem>
+		-->
+		
+	</ContentPage.ToolbarItems>
+	
+	<ContentPage.Padding>
+		<OnPlatform x:TypeArguments="Thickness"
+				iOS="10, 20, 10, 0"
+				Android="3, 3"
+			WinPhone="10, 0" />
+	</ContentPage.Padding>
+
+	<StackLayout>
+		<Label Text="CONVOCATORIAS" BackgroundColor="#f1303e" TextColor="White" FontSize="Medium" 
+			HorizontalTextAlignment="Center"/>
+
+		<!-- Visualización de los filtros activos -->
+		<Label x:Name="lblFiltros" TextColor="#58595b" FontSize="Small"
+			HorizontalTextAlignment="Start" VerticalOptions="Start" BackgroundColor="#EEEEEE"/>
+
+		<!-- Rueda infinita de espera -->
+		<ActivityIndicator x:Name="activityIndicator" Color="#f1303e"/>
+
+		<ListView x:Name="listView" ItemSelected="OnItemSelected" ItemsSource="{Binding .}" 
+				SeparatorVisibility="Default" SeparatorColor="Red" >
+
+		<ListView.RowHeight>
+			<OnPlatform x:TypeArguments="x:Int32"
+					iOS="80"
+					Android="80"
+					WinPhone="90" />
+		</ListView.RowHeight>
+		
+		<ListView.ItemTemplate>
+			<DataTemplate>
+
+				<ViewCell>
+
+					<Grid Padding="0,5" RowSpacing="1" ColumnSpacing="1">
+
+							<Grid.RowDefinitions>
+								<RowDefinition Height="Auto" />
+								<RowDefinition Height="Auto" />
+								<RowDefinition Height="Auto" />
+							</Grid.RowDefinitions>
+
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="3*" />
+								<ColumnDefinition Width="1*" />
+							</Grid.ColumnDefinitions>
+
+							<Label Text="{Binding Node_Title}" FontSize= "12" VerticalOptions="StartAndExpand" 
+								   Grid.Row="0" Grid.Column="0" />
+							<Label Text="{Binding fecha_de_mensaje}" FontSize= "8" VerticalOptions="StartAndExpand" 
+								   Grid.Row="1" Grid.Column="0"/>
+							<Label Text="{Binding Descripcion}" FontSize= "10" VerticalOptions="StartAndExpand" 
+								   Grid.Row="2" Grid.Column="0" LineBreakMode="TailTruncation"/>
+
+
+							<ffimageloading:CachedImage Grid.Row="0" Grid.Column="1"
+														HorizontalOptions="Fill" VerticalOptions="Fill"
+														Grid.RowSpan="3"
+														DownsampleToViewSize="true"
+														Source = "logoredondo.png">
+							</ffimageloading:CachedImage>
+			
+						</Grid>
+				</ViewCell>				
+
+			</DataTemplate>
+		</ListView.ItemTemplate>
+	</ListView>
+	</StackLayout>
+</ContentPage>

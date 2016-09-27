@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+			 x:Class="Telartes.Toolbar_Menu_Call"
+		xmlns:local="clr-namespace:teleartes; assembly=teleartes"
+		Title="TELARTES">
+
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			<Style TargetType="Label">
+				<Setter Property="TextColor" Value="#f1303e" />
+			</Style>
+		</ResourceDictionary>
+	</ContentPage.Resources>
+ 
+
+	<ContentPage.Content>
+		<StackLayout BackgroundColor="White" Padding="0,0,0,15">
+
+			
+			<Frame Padding="10,5,0,5" BackgroundColor="#f1303e">
+				<Label Text="CONVOCATORIAS"  TextColor="White" FontAttributes="Bold" />
+			</Frame>
+			
+			<ScrollView>
+				<StackLayout Spacing="5" BackgroundColor="#FFFFFF" Padding="5" x:Name="stack">
+	
+					<Label Text="Seleccionar" TextColor="#a7a9ac" HorizontalOptions="Center" VerticalOptions="Center"/>
+
+					<StackLayout Orientation="Horizontal">
+						<Switch VerticalOptions="Center" IsToggled="{Binding Todas, Mode=TwoWay}"/>
+						<Label Text="TODAS" VerticalOptions="Center"/>
+					</StackLayout>
+			
+					<Label Text="Filtro por categorías" TextColor="#a7a9ac" HorizontalOptions="Start" VerticalOptions="Center"/>
+
+					<StackLayout Orientation="Horizontal">
+						<Switch VerticalOptions="Center" IsToggled="{Binding Concurso, Mode=TwoWay}" />
+						<Label Text="CONCURSO" VerticalOptions="Center"/>
+					</StackLayout>
+
+					<StackLayout Orientation="Horizontal">
+						<Switch VerticalOptions="Center" IsToggled="{Binding Movilidad}"/>
+						<Label Text="MOVILIDAD" VerticalOptions="Center"/>
+					</StackLayout>
+
+					<StackLayout Orientation="Horizontal">
+						<Switch VerticalOptions="Center" IsToggled="{Binding Oportunidad_de_trabajo}" />
+						<Label Text="OPORTUNIDAD DE TRABAJO" VerticalOptions="Center"/>
+					</StackLayout>
+
+					<StackLayout Orientation="Horizontal">
+						<Switch VerticalOptions="Center" IsToggled="{Binding Proyecto}" />
+						<Label Text="PROYECTO" VerticalOptions="Center"/>
+					</StackLayout>
+
+
+					<Label Text="Filtro por departamentos" TextColor="#a7a9ac" HorizontalOptions="Start" VerticalOptions="Center"/>
+
+					<StackLayout Orientation="Horizontal">
+						<Switch VerticalOptions="Center" IsToggled="{Binding Internacional}" />
+						<Label Text="INTERNACIONAL" VerticalOptions="Center"/>
+					</StackLayout>
+
+					<StackLayout Orientation="Horizontal">
+						<Switch VerticalOptions="Center" IsToggled="{Binding Nacional}" />
+						<Label Text="NACIONAL" VerticalOptions="Center"/>
+					</StackLayout>
+
+					<StackLayout Orientation="Horizontal">
+						<Switch VerticalOptions="Center" IsToggled="{Binding Beni}" />
+						<Label Text="BENI"  VerticalOptions="Center"/>
+					</StackLayout>
+
+					<StackLayout Orientation="Horizontal">
+						<Switch VerticalOptions="Center" IsToggled="{Binding Cochabamba}" />
+						<Label Text="COCHABAMBA" VerticalOptions="Center"/>
+					</StackLayout>
+
+					<StackLayout Orientation="Horizontal">
+						<Switch VerticalOptions="Center" IsToggled="{Binding La_paz}" />
+						<Label Text="LA PAZ" VerticalOptions="Center"/>
+					</StackLayout>
+
+					<StackLayout Orientation="Horizontal">
+						<Switch VerticalOptions="Center" IsToggled="{Binding Oruro}" />
+						<Label Text="ORURO" VerticalOptions="Center"/>
+					</StackLayout>
+
+					<StackLayout Orientation="Horizontal">
+						<Switch VerticalOptions="Center" IsToggled="{Binding Pando}" />
+						<Label Text="PANDO"  VerticalOptions="Center"/>
+					</StackLayout>
+				
+					<StackLayout Orientation="Horizontal">
+						<Switch VerticalOptions="Center" IsToggled="{Binding Potosi}" />
+						<Label Text="POTOSÍ"  VerticalOptions="Center"/>
+					</StackLayout>
+
+					<StackLayout Orientation="Horizontal">
+						<Switch VerticalOptions="Center" IsToggled="{Binding Santa_cruz}" />
+						<Label Text="SANTA CRUZ"  VerticalOptions="Center"/>
+					</StackLayout>
+
+					<StackLayout Orientation="Horizontal">
+						<Switch VerticalOptions="Center" IsToggled="{Binding Sucre}" />
+						<Label Text="SUCRE"  VerticalOptions="Center"/>
+					</StackLayout>
+
+					<StackLayout Orientation="Horizontal">
+						<Switch VerticalOptions="Center" IsToggled="{Binding Tarija}" />
+						<Label Text="TARIJA"  VerticalOptions="Center"/>
+					</StackLayout>
+
+
+					<Label Text="Filtro por campos" TextColor="#a7a9ac" HorizontalOptions="Start" VerticalOptions="Center"/>
+
+					<StackLayout Orientation="Horizontal">
+						<Switch VerticalOptions="Center" IsToggled="{Binding Cultura_viva_comunitaria}" />
+						<Label Text="CULTURA VIVA COMUNITARIA"  VerticalOptions="Center"/>
+					</StackLayout>
+
+					<StackLayout Orientation="Horizontal">
+						<Switch VerticalOptions="Center" IsToggled="{Binding Cultura_de_red}" />
+						<Label Text="CULTURA DE RED"  VerticalOptions="Center"/>
+					</StackLayout>
+
+					<StackLayout Orientation="Horizontal">
+						<Switch VerticalOptions="Center" IsToggled="{Binding Incidencia}" />
+						<Label Text="INCIDENCIA"  VerticalOptions="Center"/>
+					</StackLayout>
+
+					<StackLayout Orientation="Horizontal">
+						<Switch VerticalOptions="Center" IsToggled="{Binding Formacion}" />
+						<Label Text="FORMACIÓN"  VerticalOptions="Center"/>
+					</StackLayout>
+
+					<StackLayout Orientation="Horizontal">
+						<Switch VerticalOptions="Center" IsToggled="{Binding Sostenibilidad}" />
+						<Label Text="SOSTENIBILIDAD"  VerticalOptions="Center"/>
+					</StackLayout>
+
+					<StackLayout Orientation="Horizontal">
+						<Switch VerticalOptions="Center" IsToggled="{Binding Comunicacion}" />
+						<Label Text="COMUNICACIÓN"  VerticalOptions="Center"/>
+					</StackLayout>
+
+					<StackLayout Orientation="Horizontal">
+						<Switch VerticalOptions="Center" IsToggled="{Binding Circulacion_cultural}" />
+						<Label Text="CIRCULACIÓN CULTURAL"  VerticalOptions="Center"/>
+					</StackLayout>
+
+
+					<Label Text="Filtro por áreas" TextColor="#a7a9ac" HorizontalOptions="Start" VerticalOptions="Center"/>
+
+					<StackLayout Orientation="Horizontal">
+						<Switch VerticalOptions="Center" IsToggled="{Binding Cultura_libre}" />
+						<Label Text="CULTURA LIBRE"  VerticalOptions="Center"/>
+					</StackLayout>
+
+					<StackLayout Orientation="Horizontal">
+						<Switch VerticalOptions="Center" IsToggled="{Binding Investigacion}" />
+						<Label Text="INVESTIGACIÓN"  VerticalOptions="Center"/>
+					</StackLayout>
+
+					<StackLayout Orientation="Horizontal">
+						<Switch VerticalOptions="Center" IsToggled="{Binding Literarias}" />
+						<Label Text="LITERARIAS"  VerticalOptions="Center"/>
+					</StackLayout>
+
+					<StackLayout Orientation="Horizontal">
+						<Switch VerticalOptions="Center" IsToggled="{Binding Musicales}" />
+						<Label Text="MUSICALES"  VerticalOptions="Center"/>
+					</StackLayout>
+
+					<StackLayout Orientation="Horizontal">
+						<Switch VerticalOptions="Center" IsToggled="{Binding Visuales}" />
+						<Label Text="VISUALES"  VerticalOptions="Center"/>
+					</StackLayout>
+
+					<StackLayout Orientation="Horizontal">
+						<Switch VerticalOptions="Center" IsToggled="{Binding Escenicas_danza}" />
+						<Label Text="ESCÉNICAS (DANZA)"  VerticalOptions="Center"/>
+					</StackLayout>
+					
+					<StackLayout Orientation="Horizontal">
+						<Switch VerticalOptions="Center" IsToggled="{Binding Patrimonio_cultural_inmaterial}" />
+						<Label Text="PATRIMONIO CULTURAL INMATERIAL"  VerticalOptions="Center"/>
+					</StackLayout>
+
+					<StackLayout Orientation="Horizontal">
+						<Switch VerticalOptions="Center" IsToggled="{Binding Plasticas}" />
+						<Label Text="PLÁSTICAS"  VerticalOptions="Center"/>
+					</StackLayout>
+					
+					<StackLayout Orientation="Horizontal">
+						<Switch VerticalOptions="Center" IsToggled="{Binding Historia}" />
+						<Label Text="HISTORIA"  VerticalOptions="Center"/>
+					</StackLayout>
+
+					<StackLayout Orientation="Horizontal">
+						<Switch VerticalOptions="Center" IsToggled="{Binding Artes_populares}" />
+						<Label Text="ARTES POPULARES"  VerticalOptions="Center"/>
+					</StackLayout>
+
+					<StackLayout Orientation="Horizontal">
+						<Switch VerticalOptions="Center" IsToggled="{Binding Patrimonio_cultural_material}" />
+						<Label Text="PATRIMONIO CULTURAL MATERIAL"  VerticalOptions="Center"/>
+					</StackLayout>
+
+					<StackLayout Orientation="Horizontal">
+						<Switch VerticalOptions="Center" IsToggled="{Binding Gestion_cultural}" />
+						<Label Text="GESTIÓN CULTURAL"  VerticalOptions="Center"/>
+					</StackLayout>
+
+					<StackLayout Orientation="Horizontal">
+						<Switch VerticalOptions="Center" IsToggled="{Binding Arte_urbano}" />
+						<Label Text="ARTE URBANO"  VerticalOptions="Center"/>
+					</StackLayout>
+
+					<StackLayout Orientation="Horizontal">
+						<Switch VerticalOptions="Center" IsToggled="{Binding Otra}" />
+						<Label Text="OTRA"  VerticalOptions="Center"/>
+					</StackLayout>
+
+				</StackLayout>
+			</ScrollView>
+			
+		</StackLayout>
+	</ContentPage.Content>
+
+</ContentPage>
